@@ -3,7 +3,7 @@
 namespace SearchQuery.API.Controllers
 {
     [ApiController]
-    [Route("test")]
+    [Route("test/{action}")]
     public class CitiesController : ControllerBase
     {
         public string Get()
