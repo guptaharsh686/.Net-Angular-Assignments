@@ -10,5 +10,10 @@ namespace SearchQuery.API.Controllers
         {
             return "Returning from Cities Controller";
         }
+
+        public string Get2()
+        {
+            return "Returning from Cities Controller";
+        }
     }
 }
