@@ -4,7 +4,11 @@
     {
         public int Id { get; set; }
 
-        public string CityName { get; set; }
+        public string city_name { get; set; }
+
+        public string city_code { get; set; }
+
+        public string state_code { get; set; }
 
     }
 }
