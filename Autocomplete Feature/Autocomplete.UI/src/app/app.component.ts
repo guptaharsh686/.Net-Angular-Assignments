@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Autocomplete.UI';
+
+  options = ["Sam","Varun","Tom","Harsh"]
 }
