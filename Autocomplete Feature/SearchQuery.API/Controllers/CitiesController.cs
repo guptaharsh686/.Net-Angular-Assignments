@@ -28,10 +28,7 @@ namespace SearchQuery.API.Controllers
             ActionResult<IEnumerable< string >> result = null;
             if (cityName == null)
             {
-                return result = new List<string>()
-                {
-                    "Please enter valid value in query string"
-                };
+                return result = new List<string>();
             }
 
             result = Context.Cities.Where(city => city.city_name.ToLower().StartsWith(cityName.ToLower())).Select(x => x.city_name).ToList();
