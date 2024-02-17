@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     BrowserModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
