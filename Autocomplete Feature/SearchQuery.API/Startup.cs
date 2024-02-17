@@ -35,6 +35,13 @@ namespace SearchQuery.API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(opt =>
+            {
+                opt.WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+            });
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
