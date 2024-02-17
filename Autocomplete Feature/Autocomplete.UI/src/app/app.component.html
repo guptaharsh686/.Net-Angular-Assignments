@@ -1,12 +1,16 @@
 <div class="container">
-  <mat-form-field>
-    <input matInput [matAutocomplete]="auto" placeholder="Select a place to visit">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let item of options" [value]="item">
-        {{ item }}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
+
+  <form [formGroup]="formGroup">
+    <mat-form-field>
+      <input matInput formControlName="city" [matAutocomplete]="auto" placeholder="Select a place to visit">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let item of options" [value]="item">
+          {{ item }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  
 </div>
 
 

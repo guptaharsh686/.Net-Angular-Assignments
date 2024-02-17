@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CityserviceService } from './cityservice.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,15 +12,25 @@ export class AppComponent implements OnInit {
 
   options : any = ["Sam","Varun","Tom","Harsh"]
 
-  constructor(private service : CityserviceService,private fb : FormBuilder){
+  formGroup : FormGroup;
 
+  constructor(private service : CityserviceService,private fb : FormBuilder){
+    this.formGroup = this.fb.group({
+      'city' : ['']
+    });
+    this.formGroup.get('city')?.valueChanges.subscribe(response => {
+      //console.log(response);
+      this.getNames(response)
+
+    });
   }
   ngOnInit(): void {
-    this.getNames();
+    //this.getNames();
   }
 
-  getNames(){
-    this.service.getData('j').subscribe(
+
+  getNames(name : string){
+    this.service.getData(name).subscribe(
       response => {
         this.options = response;
       }
