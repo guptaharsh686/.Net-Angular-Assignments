@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven',
@@ -10,11 +10,11 @@ export class TemplateDrivenComponent {
 
   personFormGroup : FormGroup;
 
-  constructor(){
-    this.personFormGroup = new FormGroup({
-      fname : new FormControl('aaa'),
-      lname : new FormControl('bbb'),
-      email : new FormControl('ccc')
+  constructor(private fb : FormBuilder){
+    this.personFormGroup = this.fb.group({
+      fname : ['aaa'],
+      lname : ['bbb'],
+      email : ['ccc']
     });
     console.log(this.personFormGroup.value);
   }
