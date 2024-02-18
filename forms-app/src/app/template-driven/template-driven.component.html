@@ -1,18 +1,18 @@
 <div class="container mt-3">
-    <form>
+    <form  [formGroup]="personFormGroup">
         <div class="form-group">
             <label for="fname">First Name</label>
-            <input type="text" name="fname" [formControl]="fnameControl" class="form-control"/>
+            <input type="text" name="fname" formControlName="fname" class="form-control"/>
         </div>
 
         <div class="form-group">
             <label for="fname">Last Name</label>
-            <input type="text" name="fname" [formControl]="lnameControl" class="form-control"/>
+            <input type="text" name="fname" formControlName="lname" class="form-control"/>
         </div>
 
         <div class="form-group">
             <label for="fname">Email</label>
-            <input type="text" name="fname" [formControl]="emailControl" class="form-control"/>
+            <input type="text" name="fname" formControlName="email" class="form-control"/>
         </div>
     </form>
 

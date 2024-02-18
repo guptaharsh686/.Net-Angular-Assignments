@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven',
@@ -8,13 +8,14 @@ import { FormControl } from '@angular/forms';
 })
 export class TemplateDrivenComponent {
 
-  fnameControl : FormControl;
-  lnameControl : FormControl;
-  emailControl : FormControl;
+  personFormGroup : FormGroup;
 
   constructor(){
-    this.fnameControl = new FormControl('Harsh');
-    this.lnameControl = new FormControl('Gupta');
-    this.emailControl = new FormControl('guptaharsh686@gmail.com');
+    this.personFormGroup = new FormGroup({
+      fname : new FormControl('aaa'),
+      lname : new FormControl('bbb'),
+      email : new FormControl('ccc')
+    });
   }
+
 }
