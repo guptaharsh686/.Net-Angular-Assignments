@@ -16,6 +16,12 @@ export class TemplateDrivenComponent {
       lname : new FormControl('bbb'),
       email : new FormControl('ccc')
     });
+    console.log(this.personFormGroup.value);
+  }
+
+  handleSubmission(fvalue : any){
+    console.log(fvalue);
+    
   }
 
 }
