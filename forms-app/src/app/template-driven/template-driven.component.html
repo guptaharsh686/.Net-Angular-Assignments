@@ -15,7 +15,15 @@
             <input type="text" name="fname" formControlName="email" class="form-control"/>
         </div>
 
-        <button type="submit" class="btn btn-primary float-right" >Submit</button>
+        <button type="submit" [disabled]="f.invalid" class="btn btn-primary float-right" >Submit</button>
     </form>
+
+    <div> 
+        <div>Form Data: {{ f.value | json }}</div> 
+        <div>Valid {{ f.valid }}</div> 
+        <div>Invalid {{ f.invalid }}</div> 
+        <div>Touched {{ f.touched }}</div> 
+        <div>Dirty {{ f.dirty }}</div> 
+    </div> 
 
 </div>

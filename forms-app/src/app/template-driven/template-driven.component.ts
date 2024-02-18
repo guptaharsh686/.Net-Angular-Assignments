@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven',
@@ -12,8 +12,11 @@ export class TemplateDrivenComponent {
 
   constructor(private fb : FormBuilder){
     this.personFormGroup = this.fb.group({
-      fname : ['aaa'],
-      lname : ['bbb'],
+      fname : ['aaa',Validators.required],
+      lname : ['bbb',Validators.compose([
+        Validators.required,
+        Validators.minLength(5)
+      ])],
       email : ['ccc']
     });
     console.log(this.personFormGroup.value);
